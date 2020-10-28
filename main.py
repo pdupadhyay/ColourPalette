@@ -1,6 +1,5 @@
 import math
 import random
-import threading
 import tkinter as tk
 from tkinter import *
 from tkinter import filedialog
