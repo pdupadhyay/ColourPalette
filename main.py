@@ -55,5 +55,6 @@ def UploadAction(event=None):
 
 
 if __name__ == '__main__':
-    root = class1()
-    root.mainloop()
+#    root = class1()
+#    root.mainloop()
+    get_colors("./test_pic1.jpg")
