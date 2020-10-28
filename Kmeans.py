@@ -34,7 +34,7 @@ class KMeans():
 
     def assign_points(self, clusters, points):
         plists = [[] for i in range(self.n_clusters)]
-        print(len(points))
+        print("no of points:"+ str(len(points)))
         for p in points:
             smallest_distance = float('inf')
             for i in range(self.n_clusters):
