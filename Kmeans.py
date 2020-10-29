@@ -66,7 +66,10 @@ class KMeans():
         return clusters
 
 def get_points(file):
+    new_name = "./compress" + file[2:]
+    print(new_name)
     image = Image.open(file)
+    image = image.resize((250, 250))
     w, h = image.size
     points = []
     for count, color in image.getcolors(w * h):
