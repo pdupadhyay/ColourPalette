@@ -5,19 +5,27 @@ from Kmeans import *
 from tkinter import *
 from tkinter import filedialog
 from PIL import ImageTk, Image
+from tkinter import Canvas
 
 
 class class1(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.configure(bg="white")
+        self.configure(bg="black")
         self.geometry("1200x700")
         self.title("Colour Palette")
-        self.upload = Button(self, height=3, width=20, text="UPLOAD IMAGE", bg="Cyan", fg="White", command=UploadAction)
+        self.upload = Button(self, height=3, width=20, text="UPLOAD IMAGE", bg="gold", fg="Black", command=UploadAction)
         self.upload.place(x=100, y=400)
 
 
-
+def draw_colors(colors_list):
+    canvas = Canvas(width=550, height=59, bg="white")
+    canvas.create_rectangle(5, 2, 105, 60, fill=colors_list[0])
+    canvas.create_rectangle(115, 2, 215, 60, fill=colors_list[1])
+    canvas.create_rectangle(225, 2, 325, 60, fill=colors_list[2])
+    canvas.create_rectangle(335, 2, 435, 60, fill=colors_list[3])
+    canvas.create_rectangle(445, 2, 545, 60, fill=colors_list[4])
+    canvas.place(x=600, y=570)
 
 
 def rgb_to_hex(rgb):
@@ -41,20 +49,10 @@ def UploadAction(event=None):
     panel.image = image
     panel.place(x=600, y=0)
     colors = get_colors(filename, n_colors=5)
-    color_label1 = Label(root, text=colors[0])
-    color_label1.place(x=600, y=600)
-    color_label2 = Label(root, text=colors[1])
-    color_label2.place(x=700, y=600)
-    color_label3 = Label(root, text=colors[2])
-    color_label3.place(x=800, y=600)
-    color_label4 = Label(root, text=colors[3])
-    color_label4.place(x=900, y=600)
-    color_label5 = Label(root, text=colors[4])
-    color_label5.place(x=1000, y=600)
+    draw_colors(colors)
 
 
 
 if __name__ == '__main__':
     root = class1()
     root.mainloop()
-#    get_colors("./test_pic1.jpg")

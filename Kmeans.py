@@ -44,7 +44,6 @@ class KMeans():
                     idx = i
 
             plists[idx].append(p)
-        print("In assign points, after for loop")
         return plists
 
     def fit(self, points):
